@@ -8,8 +8,8 @@ These problems illustrate concepts that previous problems have not emphasized:
   -- animation (Problem 0c)
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues and Enyi Dong.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -163,6 +163,20 @@ def problem0a(n):
     #        Simply try a few examples to convince yourself of this.
     #        ASK FOR HELP if you do not understand this hint.
     # ------------------------------------------------------------------
+    if n < 0:
+        n = -n
+
+    digit_sum = 0
+    while True:
+        if n == 0:
+            break
+        digit_sum = digit_sum + (n % 10)
+        n = n // 10
+    if digit_sum % 2 != 0:
+        return True
+    else:
+        return False
+
 
 
 def run_test_problem0b():
@@ -227,6 +241,16 @@ def problem0b(n):
     #    **  use (call) the   is_prime   function that is DEFINED ABOVE.
     ####################################################################
     # ------------------------------------------------------------------
+    count = 0
+    for k in range(2, n+1):
+        if is_prime(k) == True:
+            count = count + 1
+
+
+
+
+    return count
+
 
 
 def run_test_problem0c():
