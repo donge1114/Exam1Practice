@@ -146,7 +146,7 @@ def problem0a(n):
            since (2 + 4 + 6) is 12, which is NOT odd.
     """
     # ------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -232,7 +232,7 @@ def problem0b(n):
            since there are 46 primes between 2 and 200.
      """
     # ------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -245,9 +245,6 @@ def problem0b(n):
     for k in range(2, n+1):
         if is_prime(k) == True:
             count = count + 1
-
-
-
 
     return count
 
@@ -310,7 +307,7 @@ def problem0c(circle, n, window):
       :type window: rg.RoseWindow
     """
     # ------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ####################################################################
@@ -318,6 +315,18 @@ def problem0c(circle, n, window):
     #   renders with a half-second pause after rendering.
     ####################################################################
     # ------------------------------------------------------------------
+    circle.attach_to(window)
+    x = circle.center.x
+    y = circle.center.y
+    r = circle.radius
+    for _ in range (n + 1):
+        point = rg.Point(x, y)
+        circle = rg.Circle(point, r)
+        circle.attach_to(window)
+        x = x + (r * 2)
+    window.render(0.5)
+
+
 
 
 # ----------------------------------------------------------------------
